@@ -1,52 +1,92 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
+    <meta property="og:title" content="안녕하세요. 하이퍼클럽입니다" />
+    <meta property="og:description" content="This is a brief description of my website." />
+    <meta property="og:image" content="https://hyper-club.com/images/main/img_main_membership.webp" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>캐시 상태 확인</title>
+    <title>Mobile Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        #status {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        .icon {
+            width: 150px; /* 정사각형 크기 */
+            height: 150px;
+            background-color: #007bff; /* 아이콘 배경색 */
+            border-radius: 15px; /* 둥근 모서리 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .button-container {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
             font-size: 18px;
             font-weight: bold;
-            margin-top: 20px;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
         }
-        #timestamp {
-            font-size: 16px;
-            margin-top: 10px;
+        .button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
+
 <body>
-    <h1>캐시 상태 확인</h1>
-
-    <!-- 상태와 타임스탬프를 표시할 div 요소들 -->
-    <div id="status"></div>
-    <div id="timestamp"></div>
-
-    <script>
-        // 현재 시간 출력
-        const timestampElement = document.getElementById('timestamp');
-        const currentTimestamp = new Date().toLocaleString();
-        timestampElement.textContent = "현재 시간: " + currentTimestamp;
-
-        // 캐시 확인을 위한 Cache API 사용
-        if ('caches' in window) {
-            caches.keys().then(function(cacheNames) {
-                if (cacheNames.length > 0) {
-                    document.getElementById('status').textContent = "페이지가 캐시에서 로드되었습니다.";
-                    document.getElementById('status').style.color = 'green';
-                } else {
-                    document.getElementById('status').textContent = "캐시가 없거나 캐시를 사용할 수 없습니다.";
-                    document.getElementById('status').style.color = 'red';
-                }
-            });
-        } else {
-            document.getElementById('status').textContent = "브라우저가 Cache API를 지원하지 않습니다.";
-            document.getElementById('status').style.color = 'orange';
-        }
-    </script>
+    <div class="icon-container">
+        <div class="icon">
+            ICON
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button class="button">앱 설치하기1111</button>
+    </div>
+    
+    <div class="button-container">
+        <button class="button">앱 설치하기</button>
+    </div>
+    
+    <div class="button-container">
+        <button class="button">앱 실행하기</button>
+    </div>
 </body>
+
 </html>
